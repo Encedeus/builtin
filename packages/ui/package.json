@@ -4,6 +4,9 @@
   "type": "module",
   "module": "index.ts",
   "main": "index.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./index.ts",
@@ -11,10 +14,13 @@
     }
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "@repo/tailwind-config": "*"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
     "svelte": "^4.2.8"
   }
 }
