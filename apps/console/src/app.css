@@ -11,3 +11,6 @@
   font-family: Inter, sans-serif;
 }
 
+.apexcharts-gridline {
+  stroke-width: 2.5px;
+}
