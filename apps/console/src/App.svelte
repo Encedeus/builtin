@@ -1,7 +1,11 @@
 <script lang="ts">
-    import { Card, CardHeader, ServerIcon, BoxIcon, DriveIcon, CpuIcon, Button } from "@repo/ui";
+    import { Card, CardHeader, ServerIcon, BoxIcon, DriveIcon, CpuIcon, Button, ServerRunStatus } from "@repo/ui";
     import ApexCharts from "apexcharts";
     import { onMount } from "svelte";
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const serverId = urlParams.get("serverId");
+
 
     const options = {
         chart: {
@@ -98,7 +102,7 @@
         ...options,
         series: [{
             name: "Memory usage",
-            data: [31, 40, 28, 51, 42, 109, 100],
+            data: [31, 40, 28, 51, 42, 109, 100, 120],
         }],
         yaxis: {
             ...options.yaxis,
@@ -114,6 +118,8 @@
 
         const cpuChart = new ApexCharts(document.querySelector("#cpu-chart"), cpuOptions);
         cpuChart.render();
+
+        console.log("Server id: " + serverId);
     });
 </script>
 
@@ -130,10 +136,7 @@
                 </span>
                 <div slot="content" class="py-8 px-11">
                     <div class="flex flex-col gap-5">
-                        <div class="text-white flex flex-row items-center gap-2.5">
-                            <span class="inline-block rounded-full w-7 h-7 bg-yellow-200"/>
-                            <span class="font-medium uppercase">Starting</span>
-                        </div>
+                        <ServerRunStatus status="running"/>
                         <div class="text-white flex flex-row items-center gap-2.5">
                             <CpuIcon width={32} height={32}/>
                             <span class="font-medium uppercase">211.19%</span>
