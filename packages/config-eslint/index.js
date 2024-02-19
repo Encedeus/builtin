@@ -23,7 +23,7 @@ module.exports = {
     rules: {
         semi: 2,
         indent: ["error", 4],
-        quotes: [2, "double"],
+        quotes: [2, "double", "avoid-escape"],
     },
     overrides: [
         {

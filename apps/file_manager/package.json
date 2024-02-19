@@ -10,7 +10,9 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
-    "@repo/ui": "*"
+    "@repo/ui": "*",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
