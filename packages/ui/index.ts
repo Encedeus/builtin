@@ -2,7 +2,6 @@ export { default as CardHeader } from "./components/generic/CardHeader.svelte";
 export { default as Card } from "./components/generic/Card.svelte";
 
 export { default as ConsoleIcon } from "./components/heroicons/ConsoleIcon.svelte";
-export { default as DatabaseIcon } from "./components/heroicons/DatabaseIcon.svelte";
 export { default as ServerIcon } from "./components/heroicons/ServerIcon.svelte";
 export { default as CpuIcon } from "./components/heroicons/CpuIcon.svelte";
 export { default as DriveIcon } from "./components/heroicons/DriveIcon.svelte";
@@ -21,10 +20,4 @@ export { default as ThreeDotsIcon } from "./components/heroicons/ThreeDotsIcon.s
 export { default as DownloadIcon } from "./components/heroicons/DownloadIcon.svelte";
 export { default as TextDocumentIcon } from "./components/heroicons/TextDocumentIcon.svelte";
 export { default as PencilIcon } from "./components/heroicons/PencilIcon.svelte";
-export { default as HeartIcon } from "./components/heroicons/HeartIcon.svelte";
-export { default as LockIcon } from "./components/heroicons/LockIcon.svelte";
-export { default as DatabaseCard } from "./components/internal/databases/DatabaseCard.svelte";
-export { default as NodeRow } from "./components/internal/databases/Database.svelte";
-export { default as ServerStackIcon } from "./components/heroicons/ServerStackIcon.svelte";
-export { default as ComputerDesktop } from "./components/heroicons/ComputerDesktopIcon.svelte";
 
