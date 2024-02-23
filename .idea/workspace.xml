@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c3ff070-e934-4617-9daa-e24f68b2c5c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/ComputerDesktopIcon.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/HeartIcon.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/LockIcon.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCard.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCardList.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCreateModal.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseRow.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/databases/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/databases/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/databases/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/databases/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components/generic/Card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/generic/Card.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components/generic/CardModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/generic/CardModal.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/index.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="rd4yb9iz" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cmHL60k0Dd1bFm3w8ux3Kvw9sD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "C:/Projects/Encedeus/builtin/packages/ui/components/heroicons",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Projects\\Encedeus\\builtin\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Encedeus\builtin\packages\ui\components\heroicons" />
+      <recent name="C:\Projects\Encedeus\builtin\packages\ui\components\internal\databases" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev --force" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <arguments value="--force" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/databases/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.dev --force" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.dev --force" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c3ff070-e934-4617-9daa-e24f68b2c5c8" name="Changes" comment="" />
+      <created>1708709774947</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708709774947</updated>
+      <workItem from="1708709776705" duration="3021000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

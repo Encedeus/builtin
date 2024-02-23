@@ -1,47 +1,88 @@
 <script lang="ts">
-  import svelteLogo from "./assets/svelte.svg";
-  import viteLogo from "/vite.svg";
-  import Counter from "./lib/Counter.svelte";
+
+    import {Button, Card, CardHeader, DatabaseCreateModal, DatabaseIcon, DatabaseRow, PlusIcon} from "@repo/ui";
+
+  let isShowingModal: boolean = false;
+
+  function displayCreateModal() {
+    isShowingModal = true;
+  }
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<!--<div class="absolute bg-slate-900 w-screen h-screen top-0 -z-10"></div>-->
 
-  <div class="card">
-    <Counter />
-  </div>
+<main class="flex flex-col p-8 gap-3">
+  <CardHeader size="lg">
+    Databases
+  </CardHeader>
+  <Card height="lg" fixedHeight={true} className="overflow-x-hidden overflow-y-auto">
+        <span slot="title" class="flex flex-row items-center">
+            Database List
+        </span>
+    <span slot="icon">
+            <DatabaseIcon/>
+        </span>
+    <span slot="end">
+            <Button className="rounded-xl w-72 px-4" on:click={displayCreateModal}>
+                <span class="flex flex-row gap-2 items-center">
+                    <PlusIcon/>
+                    Create New
+                </span>
+            </Button>
+        </span>
+    <div slot="content" class="pb-4 text-white w-full">
+      <table class="border-collapse">
+        <thead>
+        <tr class="text-xs">
+          <th scope="col">Health status</th>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Size on disk</th>
+          <th scope="col">IOPS</th>
+          <th scope="col">TLS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <DatabaseRow status="online" name="test" location="test-loc" sizeOnDisk={16384} iops={26} tls={true}/>
+        <DatabaseRow status="offline" name="test" location="test-loc" sizeOnDisk={16384} iops={20} tls={false}/>
+        </tbody>
+      </table>
+    </div>
+  </Card>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+  <DatabaseCreateModal open={isShowingModal} on:close={() => {isShowingModal = false;}}/>
+  <!--    <NodeCardList/>-->
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  thead {
+    text-align: left;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+
+  thead th {
+    width: 7.5%;
   }
-  .read-the-docs {
-    color: #888;
+
+  thead th:nth-child(1) {
+    width: 5%;
   }
+
+  thead th:nth-child(2) {
+    width: 15%;
+  }
+
+  thead th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+    width: 17.5%;
+  }
+
+  th {
+    padding: 0.5rem 1.25rem 0.5em;
+  }
+
 </style>

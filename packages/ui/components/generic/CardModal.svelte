@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Card from "$lib/components/generic/Card.svelte";
+    import {Card} from "@repo/ui";
     import { createEventDispatcher } from "svelte";
 
     export let open = false;
