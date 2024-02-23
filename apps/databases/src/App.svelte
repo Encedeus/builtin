@@ -7,6 +7,10 @@
   function displayCreateModal() {
     isShowingModal = true;
   }
+
+  function createDatabase(database) {
+      console.log(database.detail);
+  }
 </script>
 
 <!--<div class="absolute bg-slate-900 w-screen h-screen top-0 -z-10"></div>-->
@@ -50,7 +54,7 @@
     </div>
   </Card>
 
-  <DatabaseCreateModal open={isShowingModal} on:close={() => {isShowingModal = false;}}/>
+  <DatabaseCreateModal open={isShowingModal} on:close={() => {isShowingModal = false;}} on:dbSubmit={createDatabase}/>
   <!--    <NodeCardList/>-->
 </main>
 

@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c3ff070-e934-4617-9daa-e24f68b2c5c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/ComputerDesktopIcon.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/HeartIcon.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/heroicons/LockIcon.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCard.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCardList.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCreateModal.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseRow.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/databases/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/databases/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/databases/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/databases/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/databases/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/generic/Card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/generic/Card.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/components/generic/CardModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/generic/CardModal.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCreateModal.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components/internal/databases/DatabaseCreateModal.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +59,7 @@
       <recent name="C:\Projects\Encedeus\builtin\packages\ui\components\internal\databases" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.dev --force">
     <configuration name="dev --force" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -93,8 +87,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.dev --force" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708709774947</updated>
-      <workItem from="1708709776705" duration="3021000" />
+      <workItem from="1708709776705" duration="5669000" />
     </task>
     <servers />
   </component>
