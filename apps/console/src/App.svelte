@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { Card, CardHeader, ServerIcon, BoxIcon, DriveIcon, CpuIcon, Button, ServerRunStatus } from "@repo/ui";
+    import {Card, CardHeader, ServerIcon, BoxIcon, DriveIcon, CpuIcon, Button, ServerRunStatus} from "@repo/ui";
     import ApexCharts from "apexcharts";
-    import { onMount } from "svelte";
+    import {onMount} from "svelte";
+    import {api} from "./lib/services/api";
 
     const urlParams = new URLSearchParams(window.location.search);
     const serverId = urlParams.get("serverId");
@@ -112,6 +113,30 @@
         }
     };
 
+    let serverStatus = "loading";
+    let cpuUtilisation = 24.6;
+    let connectionError = "";
+
+    function setCup() {
+        cpuUtilisation += Number((cpuUtilisation * ((Math.random() - .5) * .02)).toFixed(2));
+    }
+
+    async function loadStatus() {
+        const resp = await api.serversService.getServerStatus(serverId!);
+
+        if (resp.error) {
+            serverStatus = "failed to check";
+        }
+
+        serverStatus = resp.response.status;
+        console.log(serverStatus);
+    }
+
+    async function loadData() {
+        loadStatus();
+    }
+
+
     onMount(() => {
         const memoryChart = new ApexCharts(document.querySelector("#memory-chart"), memoryOptions);
         memoryChart.render();
@@ -120,7 +145,40 @@
         cpuChart.render();
 
         console.log("Server id: " + serverId);
+
+        loadData();
     });
+
+    async function onClickStart() {
+        const resp = await api.serversService.startServer(serverId!);
+
+        if (resp.error) {
+            connectionError = resp.error?.message
+            return
+        }
+        connectionError = ""
+    }
+
+    async function onClickRestart() {
+        const resp = await api.serversService.restartServer(serverId!);
+
+        if (resp.error) {
+            connectionError = resp.error?.message
+            return
+        }
+        connectionError = ""
+    }
+
+    async function onClickStop() {
+        const resp = await api.serversService.stopServer(serverId!);
+
+        if (resp.error) {
+            connectionError = resp.error?.message
+            return
+        }
+        connectionError = ""
+    }
+
 </script>
 
 <main class="p-10 flex flex-col">
@@ -136,10 +194,10 @@
                 </span>
                 <div slot="content" class="py-8 px-11">
                     <div class="flex flex-col gap-5">
-                        <ServerRunStatus status="running"/>
+                        <ServerRunStatus status="{serverStatus}"/>
                         <div class="text-white flex flex-row items-center gap-2.5">
                             <CpuIcon width={32} height={32}/>
-                            <span class="font-medium uppercase">211.19%</span>
+                            <span class="font-medium uppercase">{cpuUtilisation}%</span>
                         </div>
                         <div class="text-white flex flex-row items-center gap-2.5">
                             <BoxIcon width={32} height={32}/>
@@ -150,9 +208,13 @@
                             <span class="font-medium uppercase">184.91 MB / 20 GB</span>
                         </div>
                         <div class="self-center mt-4 flex flex-row gap-2 items-center">
-                            <Button size="sm" color="transparent">Start</Button>
-                            <Button size="sm" color="transparent">Restart</Button>
-                            <Button size="sm" color="red">Stop</Button>
+                            <Button size="sm" color="transparent" on:click={onClickStart}>Start</Button>
+                            <Button size="sm" color="transparent" on:click={onClickRestart}>Restart</Button>
+                            <Button size="sm" color="red" on:click={onClickStop}>Stop</Button>
+                        </div>
+
+                        <div class="self-center text-red-500">
+                            {connectionError}
                         </div>
                     </div>
                 </div>
@@ -181,7 +243,8 @@
             </div>
             <div class="bg-indigo-900 h-11 rounded-b-lg p-2.5 px-5 text-white flex gap-1.5 flex-shrink">
                 <span class="font-medium text-md">$</span>
-                <input type="text" placeholder="Type your command here" class="outline-indigo-500 opacity-85 focus:outline rounded-sm p-1 outline-2 bg-indigo-900 inline w-full">
+                <input type="text" placeholder="Type your command here"
+                       class="outline-indigo-500 opacity-85 focus:outline rounded-sm p-1 outline-2 bg-indigo-900 inline w-full">
             </div>
         </section>
     </div>

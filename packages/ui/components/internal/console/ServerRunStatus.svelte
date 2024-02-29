@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let status: "running" | "starting" | "stopping" | "stopped" | "restarting";
+    export let status: "running" | "starting" | "stopping" | "stopped" | "restarting" | "failed to check" | "loading";
 
     const colors = new Map<string, string>([
         ["running", "bg-green-500"],
@@ -7,6 +7,8 @@
         ["stopping", "bg-orange-700"],
         ["stopped", "bg-red-500"],
         ["restarting", "bg-lime-400"],
+        ["failed to check", "bg-red-500"],
+        ["loading", "bg-gray-500"],
     ]);
 
 
