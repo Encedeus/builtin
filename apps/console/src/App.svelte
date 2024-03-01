@@ -3,6 +3,9 @@
     import ApexCharts from "apexcharts";
     import {onMount} from "svelte";
     import {api} from "./lib/services/api";
+    import WebSocket from 'ws';
+    import {WebSocket} from "vite";
+    import RawData = WebSocket.RawData;
 
     const urlParams = new URLSearchParams(window.location.search);
     const serverId = urlParams.get("serverId");
@@ -153,31 +156,59 @@
         const resp = await api.serversService.startServer(serverId!);
 
         if (resp.error) {
-            connectionError = resp.error?.message
-            return
+            connectionError = resp.error?.message;
+            return;
         }
-        connectionError = ""
+        connectionError = "";
     }
 
     async function onClickRestart() {
         const resp = await api.serversService.restartServer(serverId!);
 
         if (resp.error) {
-            connectionError = resp.error?.message
-            return
+            connectionError = resp.error?.message;
+            return;
         }
-        connectionError = ""
+        connectionError = "";
     }
 
     async function onClickStop() {
         const resp = await api.serversService.stopServer(serverId!);
 
         if (resp.error) {
-            connectionError = resp.error?.message
-            return
+            connectionError = resp.error?.message;
+            return;
         }
-        connectionError = ""
+        connectionError = "";
     }
+
+
+    let terminal = "";
+    let command = "";
+
+    const ws = new WebSocket(`ws://servers/${serverId}/console`, {
+        perMessageDeflate: false
+    });
+
+    ws.on('error', console.error);
+
+    ws.on('open', function open() {console.log("WebSocket open");});
+
+    ws.on('message', function message(data: RawData) {
+        const newLine = data.toString()
+        terminal += `${newLine}\n`
+    });
+
+    function handleSendCommand(event: KeyboardEvent) {
+        if (event.key != "Enter") {
+            return;
+        }
+
+        const message = JSON.stringify({cmd: command});
+
+        ws.send(message);
+    }
+
 
 </script>
 
@@ -240,10 +271,11 @@
         </section>
         <section class="w-full h-full">
             <div class="bg-indigo-950 rounded-lg rounded-b-none h-[48rem] py-4 px-6 text-white overflow-y-auto break-words overflow-x-hidden">
+                {terminal}
             </div>
             <div class="bg-indigo-900 h-11 rounded-b-lg p-2.5 px-5 text-white flex gap-1.5 flex-shrink">
                 <span class="font-medium text-md">$</span>
-                <input type="text" placeholder="Type your command here"
+                <input on:keydown={handleSendCommand} bind:value={command} type="text" placeholder="Type your command here"
                        class="outline-indigo-500 opacity-85 focus:outline rounded-sm p-1 outline-2 bg-indigo-900 inline w-full">
             </div>
         </section>

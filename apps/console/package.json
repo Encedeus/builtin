@@ -12,7 +12,8 @@
   "dependencies": {
     "@encedeus/js-api": "^0.0.101",
     "@repo/ui": "*",
-    "apexcharts": "^3.45.2"
+    "apexcharts": "^3.45.2",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
     "@repo/tailwind-config": "*",
